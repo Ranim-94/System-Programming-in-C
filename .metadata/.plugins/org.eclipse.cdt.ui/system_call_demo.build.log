@@ -1,0 +1,8 @@
+13:28:20 **** Clean-only build of configuration Debug for project system_call_demo ****
+make clean 
+rm -rf ./main.d ./main.o
+rm -rf system_call_demo
+ 
+
+13:28:20 Build Finished. 0 errors, 0 warnings. (took 616ms)
+

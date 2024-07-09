@@ -1,0 +1,10 @@
+
+
+#include <stdio.h>
+
+int main(){
+
+	printf("\n Welcom to system programming in C! \n");
+
+
+} // End main()
