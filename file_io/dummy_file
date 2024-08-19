@@ -1,1 +1,3 @@
-This file was created as example for file system in system programming.
+This a dummy file created for file io manipulation.
+This is example of O_TRUNC: Sample file write2 using append flag
+New data appended using SEEK_END for lseek() demo

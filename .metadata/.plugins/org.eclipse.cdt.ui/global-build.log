@@ -1,5 +1,5 @@
-13:28:38 **** Clean-only build of configuration Debug for project file_io ****
+07:03:59 **** Clean-only build of configuration Debug for project file_io ****
 make clean 
-rm -rf ./main_files.d ./main_files.o ./open_demo.d ./open_demo.o ./read_demo.d ./read_demo.o
+rm -rf ./lseek.d ./lseek.o ./main_files.d ./main_files.o ./open_demo.d ./open_demo.o ./read_demo.d ./read_demo.o ./write_demo.d ./write_demo.o
 rm -rf file_io
  

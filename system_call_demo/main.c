@@ -22,7 +22,7 @@ int main(){
 
 	// printing to the screen using write() system call function
 	size_t sentence = write(1,buff,msg_len);
-	// 1 -> to stout (the screen)
+	// 1 -> to stdout (the screen)
 
 
 
