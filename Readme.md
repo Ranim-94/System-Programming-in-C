@@ -22,7 +22,21 @@ Some nice references I found:
 ### Additional resources
 
 TODO
-To put the youtube channels I found later.
+
+1- Some youtube channels
+
+a- https://www.nesoacademy.org/cs/03-operating-system
+
+- Initially for an OS course
+- but contains nice playlist for processes (the theory part) and threads also with examples
+
+b- https://www.youtube.com/watch?v=cex9XrZCU14&list=PLfqABt5AS4FkW5mOn2Tn9ZZLLDwA3kZUY&index=1
+
+- for processes, nice tutoriale in C
+  
+c- https://www.youtube.com/watch?v=d9s_d28yJq0&list=PLfqABt5AS4FmuQf70psXrsMLEDQXNkLq2
+
+- this is same youtube channel in b), but for threads
 
 ## Working Environment
 

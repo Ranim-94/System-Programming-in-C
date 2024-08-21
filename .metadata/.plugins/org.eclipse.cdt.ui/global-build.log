@@ -1,5 +1,24 @@
-07:03:59 **** Clean-only build of configuration Debug for project file_io ****
-make clean 
-rm -rf ./lseek.d ./lseek.o ./main_files.d ./main_files.o ./open_demo.d ./open_demo.o ./read_demo.d ./read_demo.o ./write_demo.d ./write_demo.o
-rm -rf file_io
+13:57:30 **** Incremental Build of configuration Debug for project processes ****
+make all 
+Building file: ../fork_demo.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"fork_demo.d" -MT"fork_demo.o" -o "fork_demo.o" "../fork_demo.c"
+Finished building: ../fork_demo.c
  
+Building target: processes
+Invoking: GCC C Linker
+gcc  -o "processes" ./fork_demo.o ./main_processes.o   
+Finished building target: processes
+ 
+13:57:38 **** Incremental Build of configuration Debug for project processes ****
+make all 
+make: Nothing to be done for 'all'.
+13:58:12 **** Incremental Build of configuration Debug for project processes ****
+make all 
+make: Nothing to be done for 'all'.
+13:58:50 **** Incremental Build of configuration Debug for project processes ****
+make all 
+make: Nothing to be done for 'all'.
+14:01:47 **** Incremental Build of configuration Debug for project processes ****
+make all 
+make: Nothing to be done for 'all'.
