@@ -221,11 +221,46 @@ There exist many file types in system programming, as shown in \autoref{fig:file
 
 \section{Introduction}
 
-Processes are next to files, the $\mathrm{2}^\mathrm{nd}$ important abstraction unit in Unix system.
+In this section I will present multiple defintions in order to have a complete picture about processes.\\
+
+
+\underline{$\mathrm{1}^\mathrm{st}$ definition:}\\
+
+Processes are next to files, the $\mathrm{2}^\mathrm{nd}$ important abstraction unit in Unix (and OS in general) system.
 
 In simple terms, we can define a process a program being executed such as \verb|C| program.
 
-But a process is also much bigger than that: it contains kernel resources, virtualized memory, many threads,$\cdots$.
+But a process is also much bigger than that: it contains kernel resources, virtualized memory, many threads,$\cdots$.\\
+
+\underline{2nd definition of a processe:}\\
+
+Imagine we have some program written in some high level language such as \verb|C| or \verb|java|. Computers doesn't understand high level languages, this why we have compilers that compile our code, and transfrome it into an binary executable.
+
+However, this binary executable is not enough to run the program, it needs to be \tbi{loaded into the memory}, and allocate some resources. The OS is the brain which will do so.
+
+Once the program start running, \textit{at this moment}, we can call it a process.\\
+
+\subsection{Threads}
+
+
+Now we move to the $\mathrm{2}^\mathrm{nd}$ concepts which is thread. Thread is the basic unit wihtin a process. A process can have from 1 thread to many threads.
+
+
+\subparagraph{Programs, Process, Threads}
+
+It should be noted that a program (for example a web browser) can have multiple process, and same between processes and threads.
+
+\subsection{Visualizing processes}
+
+\todo{Visualizing processes} \underline{\textit{Visualizing processes}:}
+
+\begin{itemize}
+
+\item \textit{To insert the commands in Linux with some iamges}
+
+\end{itemize}
+
+
 
 Some concepts:
 
@@ -272,7 +307,47 @@ Some concepts:
 \newpage
 \section{Process states}
 
-Talk about the life cycle after the process is created (using the \verb|fork()| system call).
+Now we have learned that a process is a program that is being executed (running).
+
+While this program is running, its \textit{state is beign changed}, that is it passes from 1 state to another.
+
+How we define the state of a program ? by the activity it is currently doing.\\
+
+In \autoref{fig:processes:processes_states} we have the different state, and also how they are running.	
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = 0.7\textwidth, frame]{Figures/processes/processes_states}
+\caption{Different state of a process}
+\label{fig:processes:processes_states}
+\end{figure}
+
+\begin{itemize}
+
+\item New: is the creation of the processe.
+
+\item Once the processe is being created, it enters into a ready staty to be assigned into a processor in order to run.
+
+\item Now the process is assigned, it enter the running state, that is being executed and doing its job
+
+\item After this running state, we have 3 cases:
+
+	\begin{enumerate}
+	
+	\item terminate: this is the normal case, that is the process has not been interrupted in some way	
+	
+	\item the process get back to the ready state due to some interrupt signal , like some other process with higer priority need to be run.
+	
+	\item Finally, the current process maybe need some I/O or some signals. In that case, the process enter a waiting state in order to have these informations	
+	
+	\end{enumerate}
+
+
+
+\end{itemize}
+
+
 
 \newpage
 \section{Process creation}

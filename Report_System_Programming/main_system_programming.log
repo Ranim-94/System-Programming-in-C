@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.5.14)  21 AUG 2024 15:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.5.14)  22 AUG 2024 15:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1107,7 +1107,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [9]
-<Figures/concept_system_programming/sys_call_diagram.png, id=209, 1119.18124pt 
+<Figures/concept_system_programming/sys_call_diagram.png, id=221, 1119.18124pt 
 x 1042.89626pt>
 File: Figures/concept_system_programming/sys_call_diagram.png Graphic file (typ
 e png)
@@ -1131,7 +1131,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 183--184
 
  []
 
-<Figures/files/file_types.png, id=219, 591.20876pt x 534.99875pt>
+<Figures/files/file_types.png, id=231, 591.20876pt x 534.99875pt>
 File: Figures/files/file_types.png Graphic file (type png)
 <use Figures/files/file_types.png>
 Package pdftex.def Info: Figures/files/file_types.png  used on input line 199.
@@ -1153,20 +1153,44 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [12 <./Figures/files/file_types.png>]
 Chapter 3.
 
-Overfull \hbox (88.93205pt too wide) in paragraph at lines 252--253
-[][][]$\OT1/cmtt/m/n/12 https : / / www . youtube . com / watch ? v = OrM7nZcxX
-ZU & list = PLBlnK6fEyqRgKl0MbI6kbI5ffNt7BF8Fn$[][] 
+Underfull \hbox (badness 10000) in paragraph at lines 224--225
+
  []
 
 
-Overfull \hbox (88.93205pt too wide) in paragraph at lines 260--261
-[][][]$\OT1/cmtt/m/n/12 https : / / www . youtube . com / watch ? v = cex9XrZCU
-14 & list = PLfqABt5AS4FkW5mOn2Tn9ZZLLDwA3kZUY$[][] 
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
+
  []
 
 [13
 
 ]
+Overfull \hbox (88.93205pt too wide) in paragraph at lines 287--288
+[][][]$\OT1/cmtt/m/n/12 https : / / www . youtube . com / watch ? v = OrM7nZcxX
+ZU & list = PLBlnK6fEyqRgKl0MbI6kbI5ffNt7BF8Fn$[][] 
+ []
+
+
+Overfull \hbox (88.93205pt too wide) in paragraph at lines 295--296
+[][][]$\OT1/cmtt/m/n/12 https : / / www . youtube . com / watch ? v = cex9XrZCU
+14 & list = PLfqABt5AS4FkW5mOn2Tn9ZZLLDwA3kZUY$[][] 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1176,11 +1200,30 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [14]
-<Figures/processes/fork_before_after.png, id=245, 1076.02pt x 864.22874pt>
+Underfull \hbox (badness 10000) in paragraph at lines 314--315
+
+ []
+
+<Figures/processes/processes_states.png, id=258, 1442.38875pt x 876.27374pt>
+File: Figures/processes/processes_states.png Graphic file (type png)
+<use Figures/processes/processes_states.png>
+Package pdftex.def Info: Figures/processes/processes_states.png  used on input 
+line 321.
+(pdftex.def)             Requested size: 317.07614pt x 192.62036pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[15 <./Figures/processes/processes_states.png>]
+<Figures/processes/fork_before_after.png, id=269, 1076.02pt x 864.22874pt>
 File: Figures/processes/fork_before_after.png Graphic file (type png)
 <use Figures/processes/fork_before_after.png>
 Package pdftex.def Info: Figures/processes/fork_before_after.png  used on input
- line 309.
+ line 384.
 (pdftex.def)             Requested size: 317.07614pt x 254.66833pt.
 
 
@@ -1191,20 +1234,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[15 <./Figures/processes/fork_before_after.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 322--323
+[16 <./Figures/processes/fork_before_after.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
 
  []
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[16]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1240,11 +1274,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[20
+[20]
+Chapter 4.
+(./main_system_programming.bbl [21
 
 ]
-Chapter 4.
-(./main_system_programming.bbl [21]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1258,13 +1292,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 ]) [23] (./main_system_programming.aux)
 Package rerunfilecheck Info: File `main_system_programming.out' has not changed
 .
-(rerunfilecheck)             Checksum: 1AF4E988E9211978CF3C349405F86C00;2860.
+(rerunfilecheck)             Checksum: 2E5E74D89782C169F83E6402C7024A4B;3127.
  ) 
 Here is how much of TeX's memory you used:
- 27955 strings out of 478287
- 544099 string characters out of 5849289
- 837735 words of memory out of 5000000
- 45584 multiletter control sequences out of 15000+600000
+ 27985 strings out of 478287
+ 544888 string characters out of 5849289
+ 837935 words of memory out of 5000000
+ 45605 multiletter control sequences out of 15000+600000
  477592 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  104i,11n,120p,456b,1078s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1277,10 +1311,10 @@ ts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1
 c/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmtt12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main_system_programming.pdf (23 pages, 685997 bytes).
+Output written on main_system_programming.pdf (23 pages, 1297786 bytes).
 PDF statistics:
- 349 PDF objects out of 1000 (max. 8388607)
- 281 compressed objects within 3 object streams
- 66 named destinations out of 1000 (max. 500000)
- 300 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 373 PDF objects out of 1000 (max. 8388607)
+ 302 compressed objects within 4 object streams
+ 74 named destinations out of 1000 (max. 500000)
+ 321 words of extra memory for PDF output out of 10000 (max. 10000000)
 
