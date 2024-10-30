@@ -361,6 +361,20 @@ Each process is represented by the OS by a process control block (PCB). An examp
 \end{figure}
 
 
+\begin{itemize}
+
+
+\item program counter: pointer which tells us the addresse of the next instruction (instruction of the code) that will be executed
+
+\item Registers (CPU regsiters): tells us which registers are begin used by this process (like stack pointers, general purpose registers,$\cdots$).
+
+\item Memory management information: section of the memory attached to this particular process
+
+\item I/O status info: which I/O will be used by the procees
+
+
+\end{itemize}
+
 
 \newpage
 \section{Process creation}
@@ -416,7 +430,33 @@ For further information about the mechanism, see chapter 5 in \cite{book_Linux_S
 \newpage
 \section{Waiting a process}
 
+
+\underline{Video 38 of the course}. I reached 29.37.\\
+
+
+\todo{wating process motivation} \underline{\textit{wating process motivation}:}
+
 \begin{itemize}
+
+\item \textit{To write a better motivation for this section after reading from the references \cite{book_Linux_System_Programming_Robert_Love}, \cite{book_opearting_system_concepts}}
+
+\end{itemize} 
+
+\underline{Explanation:}
+
+\begin{itemize}
+
+\item \textit{To repharase it later}
+
+\item usually when we have 2 processes (a parent and a child), the parent need to wait for the child in order to terminate, and not the other way around
+
+	\begin{itemize}
+	\item In other words, the child wait for the parent
+	
+	\item In that case, the child will be assigned some parent process
+	
+	\item This can cause a zombie process and we can have a memory leak 
+	\end{itemize}
 
 \item  Sometimes a process need to wait for the child process in order to terminate
 
@@ -433,6 +473,83 @@ For further information about the mechanism, see chapter 5 in \cite{book_Linux_S
 \end{itemize}
 
 \todo{Video} \textit{Video course: video 38, at 20:17}.
+
+\subsection{Functions}
+
+\begin{itemize}
+
+\item We have 2 functions to wait a process
+
+\item Header: \verb|#include <sys/wait.h>|
+
+\item \verb|int wait(int* status)| and 
+
+\end{itemize}
+
+
+\newpage
+\section{Abnormal Processes}
+
+\todo{Naming} \underline{\textit{Naming}:} 
+
+
+\begin{itemize}
+
+\item \textit{To see if I need to rename this section later.}
+
+\end{itemize}
+
+In this section we will see 3 special processes: orphane, zombine and sleeping process.
+
+\begin{itemize}
+
+\item If we have a parent and child process, and the parent process finish before the child (like it has exit), the child process will become an orphane process.
+
+\end{itemize}
+
+
+\subsection{Zombie process}
+
+This section is from chapter 1 in  \cite{book_Linux_System_Programming_Robert_Love}.
+
+\begin{itemize}
+
+\item When a process terminates, it is not immediately removed from the system. 
+
+\item Instead,the kernel keeps parts of the process resident in memory to allow the process’s parent to inquire about its status upon terminating. 
+
+
+\item This inquiry is known as waiting on the terminated process. Once the parent process has waited on its terminated child, the
+child is fully destroyed. 
+
+
+
+\item A process that has terminated, but has not yet been waited upon, is called a zombie process.
+
+\todo{zombie process} \underline{\textit{zombie process}} :
+	
+	\begin{itemize}
+	\item \textit{To understand this sentence even more.}
+	\end{itemize}
+
+\end{itemize}
+
+
+\todo{Zombie process concept} \underline{\textit{Zombie process concept}:} 
+
+\begin{itemize}
+
+\item \textit{To understand later the concept of zombie}
+
+\item \textit{From what I understand from the video, if a child process exit before the parent process and its entry table remains, the child process is knonw as a zombie process}
+
+\item \textit{Using} \verb|wait()| or \verb|waitpid()| \textit{in the parent process resolve the issue}
+
+	\begin{itemize}
+	\item \textit{To dig more why this is the solution}
+	\end{itemize}
+
+\end{itemize}
 
 \newpage
 \section{Memory Layout}
@@ -482,6 +599,40 @@ Memory a of process is composed of different \tbi{segments} as enumerated below
 
 
 \newpage
+\section{Excec Family}
+
+Till now we have see the \verb|fork()| funciton, which duplicate a program, \tbi{but the heap and the stack remains the same}.\\
+
+Another form of creating process is through the \verb|exec| family fo calls. The difference here is:
+
+	\begin{itemize}
+	\item In this type of function, the program will load and execute some new process, and hence it will \tbi{replace the previous contents of the address space, and begin execution the new program} (see chapter 5 in \cite{book_Linux_System_Programming_Robert_Love}) 
+	\end{itemize}
+
+
+An example is shown in \autoref{fig:processes:excel_family_example}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = 0.9\textwidth, frame]{Figures/processes/excel_family_example}
+\caption{Excel() example}
+\label{fig:processes:excel_family_example}
+\end{figure}
+
+	\begin{itemize}
+	
+	\item \verb|p1| is calling \verb|p2| using \verb|excel()|
+	
+	\item The arguments to \verb|excel()| are the binary (compiled 		code)
+	
+	\item Note that is because we have a replacement of memory, the \verb|printf()| for \verb|p1.c| is never executed
+	
+	\item Even we are running \verb|p2.c| from \verb|p1.c|, but we have the same process id in both
+	
+	\end{itemize}
+
+
+\newpage
 \section{Notes and summary}
 
 \begin{itemize}
@@ -497,6 +648,119 @@ Memory a of process is composed of different \tbi{segments} as enumerated below
 
 \end{itemize}
 
+
+\newpage
+\section{TODO for Processes}
+
+Thi section contains general idea for some points to do later for processes.
+
+\begin{itemize}
+
+\item Write a better introduction later for the begnning of this chapter
+
+\item There is the concept of using \verb|fork()| and \verb|excel()| together in the same code
+
+	\begin{itemize}
+	\item This is the in the video 44 of the course
+	
+	\item But need to search better in the books for some practical apsect also, and not only theory
+	\end{itemize}
+
+\item To see also the ide of files handling in a \verb|fork()| call
+
+	\begin{itemize}
+	\item What happen to these resources before and after the \verb|fork()|
+	
+	\item For this I need to review the low level things about file handling (file as a byte, offsetting a file, $\cdots$)
+	\end{itemize}
+
+\end{itemize}
+
+
+
+%=================================================
+%=================================================
+%=================================================
+
+\chapter{Signals}
+
+\section{Intro}
+
+\underline{Section from course:} number 11
+
+\begin{itemize}
+
+\item Signals are interrups that provide mechanism to deal with some unexpected events
+
+\item The signals comes from the kernel side
+
+\item Every signal has a signal handler
+
+	\begin{itemize}
+	\item The signal handler is a juste function 
+	\end{itemize}
+
+\end{itemize}
+
+
+Also some points from my reading in \cite{book_opearting_system_concepts} (chapter 4, section 6.2):
+
+\begin{itemize}
+
+\item Signals are ways to notify the process for some particular events
+
+\item 2 types of signals:
+
+	\begin{enumerate}
+	\item synchronously: that is generated within the same process.
+	
+	Example can be a program that have done a division by 0, or accessing some illegal memory side
+	
+	\item asynchronously: the signal comes from outside the process, such pressing \verb|Ctrl C| to terminate a program (force it to terminate)
+
+	\end{enumerate}
+
+
+\item Once the signal is generated (either synchronous or asynchronous), \tbi{it must be handled by a handler}.
+
+2 possible way to handle the signal:
+
+	\begin{itemize}
+	\item A default signal handler
+	
+	\item A user signal handler
+	\end{itemize}
+
+
+\item \underline{Default signal handler:} this is handled by the kernel, and we have 2 possibilities:
+
+	\begin{itemize}
+	\item can be ignored
+	
+	\item catch and handle the signal $\leftrightarrow$ 
+	\end{itemize}
+
+\item If a signal doesn't have a handler, it has a \tbi{default action to be taken}
+
+\end{itemize}
+
+\newpage
+\section{Examples}
+
+See example in \verb|signal| project in \verb|System Programming| workspace.\\
+
+\todo{Alarm signal} \underline{\textit{Alarm signal}:}
+
+\begin{itemize}
+
+\item \textit{To redo the alram signla example because I didn't understand very clearly how the flow of the code is}
+
+\end{itemize}
+
+
+%=================================================
+%=================================================
+%=================================================
 
 \chapter{Virtual Memory}
 
@@ -520,7 +784,292 @@ The virtual memory concept allow the process to access more address space then t
 \todo{Memory Management} \underline{\textit{Memory Management}:} \textit{I will redo this chapter later after the process chapter, and when the book arrive.} 
 
 
+%===========================
+%===========================
+%===========================
 
+\chapter{Threads}
+
+\section{Introduction}
+
+\todo{intro to thread} \textit{intro to thread}
+
+\begin{itemize}
+
+\item \textit{To write later the intro about the thread}
+
+
+\item \textit{Difference between thread and processes}
+
+\item \textit{Read from books}
+
+
+\end{itemize}
+
+
+\underline{Some points from the video lectures:}
+
+\begin{itemize}
+
+\item Different threads share the virtual memory with the process that created them
+
+	\begin{itemize}
+	\item Unlike processes, which can't share memory among 	each other
+	\end{itemize}
+
+\item In Linux, the most famous thread interface is \verb|POSIX|: abbreviation for portable operating system interfance
+
+\item The advantage of having many threads is to have many threads is to divid a task into smaller one, and each handle by a thread.
+
+\end{itemize}
+
+
+\section{Race Condition}
+
+In a high level, race conditions happen when a 2 threads try to access the same variable, and one of them has not finished yet.
+
+\todo{Race Conditions points} \underline{\textit{Race Conditions points}:} 
+
+
+\begin{itemize}
+
+\item \textit{To revisit later the video number 3 in CodeVolt playlist}
+
+\item \textit{To see what later to other points we can add from other videos or resources}
+
+\end{itemize}
+
+\subsection{Race Condition Question}
+
+\todo{Race Condition Questions} \underline{\textit{Race Condition Questions}:} 
+
+\begin{itemize}
+
+\item Are threads happening in a parallel execution always, or they wait each other (overlapping manner) ?
+
+\end{itemize}
+
+
+\subsection{Mutex}
+
+Mutex is a way to prevent race condition.
+
+As a definition, a mutex is a lock about a section of code. \\
+
+\underline{Some important points (taken from the CodVault playlist):}
+
+\begin{itemize}
+
+\item The idea is if we have 2 threads, by implementing the lock, there is no way we have a thread is reading, and the other thread will be executing
+
+	\begin{itemize}
+	\item In other words, the $\mathrm{1}^\mathrm{st}$ thread will finish its work
+	\end{itemize}
+
+\end{itemize}
+
+
+
+\section{General Points}
+
+\begin{itemize}
+
+\item When we have 1 threads created, the thread and the main process share same process ID via the \verb|getpid()|.
+
+
+\item When passing arguments to threads 
+
+	\begin{itemize}
+	
+	\item this means we are passing input to the routine 		function
+	
+	\item This is done via \verb|pthread_create()|
+	
+	\item Don't forget that we need to cast the \verb|void*| pointer to the right type we are passing
+		
+	
+	\end{itemize}
+
+\item Whenever we create a thread, we need to wait this thread to be finish its work
+
+	\begin{itemize}
+	\item This is done via \verb|pthread_join()|
+	
+	\item The same is true if we have multiple threads.
+	\end{itemize}
+
+\item If we need to \tbi{return some result} (so \textit{an output}) from the thread
+
+	\begin{itemize}
+
+	\item We do it via \verb|pthread_join()|, using its $\mathrm{2}^\mathrm{nd}$ argument
+
+	\end{itemize}
+
+\end{itemize}
+
+
+%========================================
+%========================================
+%========================================
+
+\chapter{Libraries in C/C++}
+
+\section{Introduction}
+
+This chapter deal with external libraries in C/C++.
+
+
+The libraries can be linked and loaded also via 2 options:
+
+\begin{enumerate}
+
+\item Static library and loaded statically
+
+\item Dynamic library (or shared object in Linux \verb|.so|), which lnkied dynmaically.
+
+\end{enumerate}
+
+
+It is important to note that libraries are \tbi{precompiled files}, and we want to use them in our applications. The purpose of this precompilation is to save time and don't compile them each time we modify our code.
+
+In other words, this means we compile only our source code, and the libraries remains intact.
+
+\section{Some Tools}
+
+\begin{itemize}
+
+\item \verb|ldd some_output| command used to print out all the shared object dependcy related to our executable \verb|C| code, named \verb|some_output|.
+
+
+\item An example is shown in \autoref{fig:Libraries:ldd_command_example}, where I genrate some executable named \verb|final_app|
+
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = 0.7\textwidth, frame]{Figures/Libraries/ldd_command_example}
+\caption{ldd command example}
+\label{fig:Libraries:ldd_command_example}
+\end{figure}
+
+\section{Static Libraries}
+
+\begin{itemize}
+
+\item Static libraries are binary files that are compiled using a compiler like \verb|gcc|
+
+\item They result in a files with \verb|.o| extensions, which stands for object files
+
+\item The important point about these libraries that they are \tbi{architecture dependent}, so if they run on my machine (Linux), doens't mean necessarly that they run on other machine
+
+\item The final executable program will be big in size
+
+	\begin{itemize}
+	\item We can use the command \verb|ls -lh| to display the size of each fine in Kbytes
+	\end{itemize}
+
+
+\end{itemize}
+
+\subsection{Creating a static library}
+
+\begin{itemize}
+
+\item Suppose we have 2 object files that we compile using \verb|gcc|. They are \verb|mymath.o| and \verb|mymath2.o|
+
+\item To create the library, we need to bundle these 2 \verb|.o| files. We use \verb|ar| tool for this purpose.
+
+\item The command will be:
+
+\verb|ar rcs mymath.a mymath.o mymath2.o|, where:
+
+	\begin{itemize}
+	\item \verb|mymath.a| is the name of the librari, with \verb|.a| extension
+	
+	\item \verb|rcs| is for 
+	\end{itemize}
+
+
+\end{itemize}
+
+\subsection{Pros and Cons}
+
+\begin{itemize}
+\item Static libraries are easy to deal with, since everything is bundled together, this simplifes distribution to other
+
+\item but the size on disk and and at run time is big
+
+\item Also the static libraries are not cross compiled $\leftrightarrow$ this means they can be shared by 1 program only
+
+\end{itemize}
+
+
+\section{Shared Library}
+
+\begin{itemize}
+
+\item shared library (or dynamic library) are another type, with \verb|.so| extension for Linux (and \verb|.dll| for window)
+
+\end{itemize}
+
+\subsection{Creating a shared library}
+
+\begin{itemize}
+
+\item \verb|gcc -fPIC -shared .src/mymath.c -o libmymath.so|
+
+	\begin{itemize}
+	\item This command instruct \verb|gcc| to create a shared library (hence the flag \verb|-shared|) named \verb|libmymath.so|
+	
+	\item \verb|lib| prefix is necessary for any name we choose, because the when compiling our code (see \ref{libraries_C:compiling_code_shared_lib}), the linker assume always the library name starts with \verb|lib|.
+	
+	\item Recall that \verb|-o| stands for output
+	\end{itemize}
+
+\end{itemize}
+
+
+\subsection{Compiling C code with a shared library}
+\label{libraries_C:compiling_code_shared_lib}
+
+\begin{itemize}
+
+\item Now once we create the shared library, we need to compile our \verb|C| code with this shared library
+
+\item As any library, we need to link \verb|.so|  to our code using the linker (so using \verb|-l| flag)
+
+\item Now this step is a little tricky
+
+	\begin{itemize}
+
+	\item Although our created shared library name is \verb|libmymath.so|, in the command we use only \verb|mymath|, where we omit both \verb|lib| (prefix) and the \verb|.so| extension
+	
+	\item The linker epxect these prefixes/postfixes so no need to add them in the command
+
+	\end{itemize}
+
+
+\item The command is:
+
+\verb|gcc ./src/*.c -o prog -lmymath L./|
+
+	\begin{itemize}
+	\item \verb|.L/| is to indicate the the libraries are in the current directories
+	\end{itemize}
+
+
+\end{itemize}
+
+\subsection{Running the program}
+
+We use the following command using the environment variable:
+
+\begin{itemize}
+
+\item \verb|LD_LIBRARY_PATH="./" ./final_app|
+
+\end{itemize}
 
 
 %**************** References ****************

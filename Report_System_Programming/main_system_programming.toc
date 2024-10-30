@@ -19,8 +19,32 @@
 \contentsline {section}{\numberline {3.6}Process creation}{17}{section.3.6}%
 \contentsline {subsection}{\numberline {3.6.1}Copy on- write}{17}{subsection.3.6.1}%
 \contentsline {section}{\numberline {3.7}Waiting a process}{19}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Memory Layout}{20}{section.3.8}%
-\contentsline {subsection}{\numberline {3.8.1}Code Example}{20}{subsection.3.8.1}%
-\contentsline {section}{\numberline {3.9}Notes and summary}{21}{section.3.9}%
-\contentsline {chapter}{\numberline {4}Virtual Memory}{23}{chapter.4}%
-\contentsline {section}{\numberline {4.1}The big picture}{23}{section.4.1}%
+\contentsline {subsection}{\numberline {3.7.1}Functions}{19}{subsection.3.7.1}%
+\contentsline {section}{\numberline {3.8}Abnormal Processes}{20}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Zombie process}{20}{subsection.3.8.1}%
+\contentsline {section}{\numberline {3.9}Memory Layout}{21}{section.3.9}%
+\contentsline {subsection}{\numberline {3.9.1}Code Example}{21}{subsection.3.9.1}%
+\contentsline {section}{\numberline {3.10}Excec Family}{22}{section.3.10}%
+\contentsline {section}{\numberline {3.11}Notes and summary}{23}{section.3.11}%
+\contentsline {section}{\numberline {3.12}TODO for Processes}{24}{section.3.12}%
+\contentsline {chapter}{\numberline {4}Signals}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Intro}{25}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Examples}{26}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Virtual Memory}{27}{chapter.5}%
+\contentsline {section}{\numberline {5.1}The big picture}{27}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Threads}{29}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Introduction}{29}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Race Condition}{29}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Race Condition Question}{29}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Mutex}{30}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6.3}General Points}{30}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Libraries in C/C++}{31}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Introduction}{31}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Some Tools}{31}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Static Libraries}{31}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Creating a static library}{32}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Pros and Cons}{32}{subsection.7.3.2}%
+\contentsline {section}{\numberline {7.4}Shared Library}{32}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Creating a shared library}{32}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Compiling C code with a shared library}{33}{subsection.7.4.2}%
+\contentsline {subsection}{\numberline {7.4.3}Running the program}{33}{subsection.7.4.3}%
