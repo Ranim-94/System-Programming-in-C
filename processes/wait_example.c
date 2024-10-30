@@ -12,12 +12,13 @@
  * */
 
 
-#include "wait_demo.h"
+#include "wait_example.h"
 
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <stdlib.h>
 
 
 
@@ -48,9 +49,19 @@ void run_wait(void){
 		// id not 0 -> definitely not a child process
 		// here we are in the parent process
 
-		wait(NULL); // -> we are waiting for the child process to finish its execution
-		// we use NULL as argument because I am not interested by the status of
-		// the child process when it is finished
+		wait(NULL); // ->
+
+		/*
+		 * -we are waiting for the child process to finish its execution
+		 * - we use NULL as argument because I am not interested by the status of
+		 *   the child process when it is finished
+		 *
+		 * -wait() also the pid of the child process we are waiting for
+		 *
+		 * - if there is no child process to wait for, wait() returns -1
+		 *
+		 * */
+
 	}
 
 	for(int i = n; i< n+5 ; i++){

@@ -38,8 +38,15 @@ void run_fork(void){
 
     if(id > 0){
 
+    	printf("\n -> We are in the parent section of the memory \n");
+
     	// this block of code will apply in the parent case
-    	printf("\n -> Parent Process: I have created child process with ID = (%d)\n",id);
+    	printf("\n \t - Parent Process: I have created child process with ID = (%d)\n",id);
+
+    	printf("\n \t - getpid() return value = (%d)\n",getpid());
+    	/*It should give the same number before the fork()*/
+
+
 
     }else{
 

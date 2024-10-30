@@ -121,3 +121,72 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp
 !MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIRunControl$9@1443ea31): Status ERROR: org.eclipse.cdt.dsf.gdb code=10001 Context cannot be suspended.' resulted in an error.
 !SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10001 2024-08-21 16:11:19.651
 !MESSAGE Context cannot be suspended.
+!SESSION 2024-08-23 15:40:22.123 -----------------------------------------------
+eclipse.buildId=4.31.0.20240307-1200
+java.version=17.0.10
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product /home/ranimtom/Simulation_Linux_Unabiz/System_Programming
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.cpp.product /home/ranimtom/Simulation_Linux_Unabiz/System_Programming
+
+!ENTRY org.eclipse.linuxtools.docker.core 4 0 2024-08-23 16:51:27.760
+!MESSAGE Failed to retrieve image info
+!STACK 0
+org.mandas.docker.client.exceptions.DockerRequestException: Request error: GET unix://localhost:80/images/tapos-builder-kirkstone:1.4.0/json: 200
+	at org.mandas.docker.client.DefaultDockerClient.propagate(DefaultDockerClient.java:2562)
+	at org.mandas.docker.client.DefaultDockerClient.request(DefaultDockerClient.java:2436)
+	at org.mandas.docker.client.DefaultDockerClient.inspectImage(DefaultDockerClient.java:1228)
+	at org.eclipse.linuxtools.internal.docker.core.DockerConnection.getImageInfo(DockerConnection.java:967)
+	at org.eclipse.linuxtools.docker.ui.launch.ContainerLauncher.launch(ContainerLauncher.java:525)
+	at org.eclipse.linuxtools.docker.ui.launch.ContainerLauncher.launch(ContainerLauncher.java:367)
+	at org.eclipse.linuxtools.docker.ui.launch.ContainerLauncher.launch(ContainerLauncher.java:292)
+	at org.eclipse.cdt.internal.docker.launcher.ContainerLaunchConfigurationDelegate.launch(ContainerLaunchConfigurationDelegate.java:248)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:805)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1038)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1.run(DebugUIPlugin.java:1241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: jakarta.ws.rs.client.ResponseProcessingException: com.fasterxml.jackson.databind.exc.ValueInstantiationException: Cannot construct instance of `org.mandas.docker.client.messages.ImmutableImageInfo$Builder`, problem: Cannot build ImageInfo, some of required attributes are not set [container, containerConfig]
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 1717]
+	at org.glassfish.jersey.client.JerseyInvocation.translate(JerseyInvocation.java:745)
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$invoke$1(JerseyInvocation.java:675)
+	at org.glassfish.jersey.client.JerseyInvocation.call(JerseyInvocation.java:697)
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$runInScope$3(JerseyInvocation.java:691)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:292)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:274)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:205)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:390)
+	at org.glassfish.jersey.client.JerseyInvocation.runInScope(JerseyInvocation.java:691)
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:674)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:422)
+	at org.mandas.docker.client.DefaultDockerClient.request(DefaultDockerClient.java:2434)
+	... 11 more
+Caused by: com.fasterxml.jackson.databind.exc.ValueInstantiationException: Cannot construct instance of `org.mandas.docker.client.messages.ImmutableImageInfo$Builder`, problem: Cannot build ImageInfo, some of required attributes are not set [container, containerConfig]
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 1717]
+	at com.fasterxml.jackson.databind.exc.ValueInstantiationException.from(ValueInstantiationException.java:47)
+	at com.fasterxml.jackson.databind.DeserializationContext.instantiationException(DeserializationContext.java:2014)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleInstantiationProblem(DeserializationContext.java:1426)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.wrapInstantiationProblem(BeanDeserializerBase.java:1982)
+	at com.fasterxml.jackson.databind.deser.BuilderBasedDeserializer.finishBuild(BuilderBasedDeserializer.java:202)
+	at com.fasterxml.jackson.databind.deser.BuilderBasedDeserializer.deserialize(BuilderBasedDeserializer.java:217)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:2099)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1249)
+	at org.glassfish.jersey.jackson.internal.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:829)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:233)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:212)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:132)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1072)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:919)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:853)
+	at org.glassfish.jersey.client.ClientResponse.readEntity(ClientResponse.java:298)
+	at org.glassfish.jersey.client.JerseyInvocation.translate(JerseyInvocation.java:742)
+	... 22 more
+Caused by: java.lang.IllegalStateException: Cannot build ImageInfo, some of required attributes are not set [container, containerConfig]
+	at org.mandas.docker.client.messages.ImmutableImageInfo$Builder.build(ImmutableImageInfo.java:942)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.fasterxml.jackson.databind.deser.BuilderBasedDeserializer.finishBuild(BuilderBasedDeserializer.java:200)
+	... 35 more
